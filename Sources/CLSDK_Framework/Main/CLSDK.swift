@@ -29,10 +29,7 @@ public class CLSDK {
     
 }
 
-extension CLSDK: PublicObserver {
-    func update(count: Double) {
-        print("publicObserver count = \(count)")
-    }
+extension CLSDK {
     
     public func outputBroadcast() {
         let broadcast = Broadcast()
@@ -41,4 +38,17 @@ extension CLSDK: PublicObserver {
         broadcast.count = 55
         
     }
+}
+
+private class Station: PublicObserver {
+    var identifier: String
+    init(identifier: String) {
+        self.identifier = identifier
+    }
+    
+    func update(count: Double) {
+        // print
+        print("broadcast station id = \(identifier) count = \(count)")
+    }
+    
 }

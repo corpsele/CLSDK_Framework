@@ -39,15 +39,3 @@ internal class Broadcast: Subject {
         }
     }
 }
-
-internal class Station: PublicObserver {
-    var identifier: String
-    init(identifier: String) {
-        self.identifier = identifier
-    }
-    
-    func update(count: Double) {
-        
-    }
-    
-}
