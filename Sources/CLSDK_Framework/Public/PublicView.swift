@@ -145,13 +145,19 @@ internal struct ButtonComponent: Component {
 }
 
 internal final class ComponentFac {
+    // 字典保存：字符串 -> “遵循 Initializable 的类型的元类型”
+    private var registry: [String: any Component.Type] = [:]
     private var creators: [String: () -> Any] = [:]
-    func register<T>(_ type: T.Type, forKey key: String) {
-        
-        creators[key] = { NSClassFromString(key)?.init() as Any }
+    // 注册方法
+    func register<T: Component>(_ type: T.Type, forKey name: String) {
+        registry[name] = type
     }
-    func create<T>(forKey key: String) -> T? {
-        return creators[key]?() as? T
+    // 根据名字创建实例（这里只支持无参 init）
+    func create(forKey: String) -> any Component {
+        guard let type = registry[forKey] else {
+            fatalError("没有注册类型：\(forKey)")
+        }
+        return type.init()
     }
     func make<T: Component>() -> T {
         return T()
