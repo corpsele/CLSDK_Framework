@@ -147,7 +147,8 @@ internal struct ButtonComponent: Component {
 internal final class ComponentFac {
     private var creators: [String: () -> Any] = [:]
     func register<T>(_ type: T.Type, forKey key: String) {
-        creators[key] = { type as Any }
+        
+        creators[key] = { NSClassFromString(key)?.init() as Any }
     }
     func create<T>(forKey key: String) -> T? {
         return creators[key]?() as? T
