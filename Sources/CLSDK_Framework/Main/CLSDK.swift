@@ -26,4 +26,19 @@ public class CLSDK {
         print("rectOne = \(rectOne.getViewFrame()), rectTwo = \(rectTwo.getViewFrame())")
     }
     
+    
+}
+
+extension CLSDK: PublicObserver {
+    func update(count: Double) {
+        print("publicObserver count = \(count)")
+    }
+    
+    public func outputBroadcast() {
+        let broadcast = Broadcast()
+        let station = Station(identifier: "station1")
+        broadcast.addObserver(station)
+        broadcast.count = 55
+        
+    }
 }
