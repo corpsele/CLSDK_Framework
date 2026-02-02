@@ -24,7 +24,7 @@ internal class Broadcast: Subject {
     private var observers: [PublicObserver] = []
     
     internal func addObserver(_ observer: any PublicObserver) {
-        if observers.contains(where: { $0 === observer} ) {
+        if !observers.contains(where: { $0 === observer} ) {
             observers.append(observer)
         }
     }
