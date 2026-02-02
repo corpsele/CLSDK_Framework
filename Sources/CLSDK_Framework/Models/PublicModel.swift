@@ -3,7 +3,7 @@
 //  CLSDK_Framework
 //
 //  Created by corpsele_n on 2026/2/2.
-//  Adapter
+//  Adapter 
 
 internal protocol PublicModel {
     var id: String {
