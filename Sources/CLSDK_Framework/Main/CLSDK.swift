@@ -13,7 +13,7 @@ public class CLSDK {
         
     }
     
-    @MainActor static let shared = CLSDK()
+    @MainActor public static let shared = CLSDK()
     
     public static func outputModel() {
         let model = PublicModelAdapter(legacyModel: LegacyModel(id: "1", strTitle: "Title", strUrl: "url", subTitle: "subTitle"))
