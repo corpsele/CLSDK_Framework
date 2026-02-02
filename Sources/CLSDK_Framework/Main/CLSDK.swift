@@ -56,6 +56,12 @@ extension CLSDK {
         let config = AppEnviroment.make(for: .dev)
         print("==========outputSimpleFac config = \(config.baseUrl), \(config.apiKey)")
     }
+    
+    @available(iOS 13.0, *)
+    public func outputMethodFac() {
+        let v = ViewFac.makeLabel(text: "label fac")
+        print("==========outputMethodFac v = \(v)")
+    }
 }
 
 private class Station: PublicObserver {
