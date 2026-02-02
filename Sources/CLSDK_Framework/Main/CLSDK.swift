@@ -78,8 +78,8 @@ extension CLSDK {
         print("==========outputGenericFac label = \(label), button = \(button)")
         fac.register(LabelComponent.self, forKey: "label")
         fac.register(ButtonComponent.self, forKey: "button")
-        let l = fac.create(forKey: "LabelComponent") as? LabelComponent
-        let b = fac.create(forKey: "LabelComponent") as? ButtonComponent
+        let l = fac.create(forKey: "label") as? LabelComponent
+        let b = fac.create(forKey: "button") as? ButtonComponent
         print("==========outputGenericFac l = \(l), b = \(b)")
     }
 }
