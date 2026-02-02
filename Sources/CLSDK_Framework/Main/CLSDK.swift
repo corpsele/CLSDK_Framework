@@ -51,6 +51,11 @@ extension CLSDK {
         }
         .store(in: &cancellabel)
     }
+    
+    public func outputSimpleFac() {
+        let config = AppEnviroment.make(for: .dev)
+        print("==========outputSimpleFac config = \(config.baseUrl), \(config.apiKey)")
+    }
 }
 
 private class Station: PublicObserver {
