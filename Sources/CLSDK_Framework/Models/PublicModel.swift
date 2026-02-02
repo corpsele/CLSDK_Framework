@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// MARK: adapter
+// -----------------------------
 internal protocol PublicModel {
     var id: String {
         get
@@ -47,7 +49,10 @@ internal class PublicModelAdapter: PublicModel {
     
     
 }
+//------------------------------------
 
+// MARK: Combine Observer
+// --------------------------
 @available(iOS 13.0, *)
 internal final class PublicObserverModel: ObservableObject {
     @Published var counter: Int = 0
@@ -55,3 +60,4 @@ internal final class PublicObserverModel: ObservableObject {
     func increment() { counter += 1 }
     func decrement() { counter -= 1 }
 }
+//-------------------------------

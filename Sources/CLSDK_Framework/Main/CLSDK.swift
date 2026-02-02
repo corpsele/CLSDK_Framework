@@ -62,6 +62,26 @@ extension CLSDK {
         let v = ViewFac.makeLabel(text: "label fac")
         print("==========outputMethodFac v = \(v)")
     }
+    
+    public func outputAbstractFac() {
+        let fac = FacProvider.factory(for: .dark)
+        let button = fac.createButton()
+        let checkBox = fac.createCheckBox()
+        button.paint()
+        checkBox.paint()
+    }
+    
+    public func outputGenericFac() {
+        let fac = ComponentFac()
+        let label: LabelComponent = fac.make()
+        let button: ButtonComponent = fac.make()
+        print("==========outputGenericFac label = \(label), button = \(button)")
+        fac.register(LabelComponent.self, forKey: "label")
+        fac.register(ButtonComponent.self, forKey: "button")
+        let l: LabelComponent? = fac.create(forKey: "label")
+        let b: ButtonComponent? = fac.create(forKey: "button")
+        print("==========outputGenericFac l = \(l), b = \(b)")
+    }
 }
 
 private class Station: PublicObserver {
