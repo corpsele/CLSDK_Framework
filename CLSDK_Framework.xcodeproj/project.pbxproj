@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		75FF8CEE2F3032C30091C943 /* CLSDK_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FF8CE22F3032C30091C943 /* CLSDK_Framework.framework */; };
+		75FF8D0C2F3037F50091C943 /* CLSDK_Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D062F3037F50091C943 /* CLSDK_Framework.swift */; };
+		75FF8D0D2F3037F50091C943 /* CLSDK_Framework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D052F3037F50091C943 /* CLSDK_Framework.docc */; };
+		75FF8D122F3039960091C943 /* CLSDK_Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D062F3037F50091C943 /* CLSDK_Framework.swift */; };
+		75FF8D132F3039960091C943 /* CLSDK_Framework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D052F3037F50091C943 /* CLSDK_Framework.docc */; };
+		75FF8D1D2F3039B30091C943 /* CLSDK_Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D062F3037F50091C943 /* CLSDK_Framework.swift */; };
+		75FF8D1E2F3039B30091C943 /* CLSDK_Framework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 75FF8D052F3037F50091C943 /* CLSDK_Framework.docc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,20 +29,11 @@
 /* Begin PBXFileReference section */
 		75FF8CE22F3032C30091C943 /* CLSDK_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLSDK_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FF8CED2F3032C30091C943 /* CLSDK_FrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLSDK_FrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75FF8D052F3037F50091C943 /* CLSDK_Framework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CLSDK_Framework.docc; sourceTree = "<group>"; };
+		75FF8D062F3037F50091C943 /* CLSDK_Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLSDK_Framework.swift; sourceTree = "<group>"; };
+		75FF8D192F3039960091C943 /* CLSDK_Framework-Static.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CLSDK_Framework-Static.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75FF8D242F3039B30091C943 /* CLSDK_Framework-Dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CLSDK_Framework-Dynamic.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		75FF8CE42F3032C30091C943 /* CLSDK_Framework */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CLSDK_Framework;
-			sourceTree = "<group>";
-		};
-		75FF8CF12F3032C30091C943 /* CLSDK_FrameworkTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CLSDK_FrameworkTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		75FF8CDF2F3032C30091C943 /* Frameworks */ = {
@@ -54,15 +51,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75FF8D142F3039960091C943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D1F2F3039B30091C943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		75FF8CD82F3032C30091C943 = {
 			isa = PBXGroup;
 			children = (
-				75FF8D032F3033B60091C943 /* Sources */,
-				75FF8CE42F3032C30091C943 /* CLSDK_Framework */,
-				75FF8CF12F3032C30091C943 /* CLSDK_FrameworkTests */,
+				75FF8D082F3037F50091C943 /* Sources */,
 				75FF8CE32F3032C30091C943 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,13 +81,25 @@
 			children = (
 				75FF8CE22F3032C30091C943 /* CLSDK_Framework.framework */,
 				75FF8CED2F3032C30091C943 /* CLSDK_FrameworkTests.xctest */,
+				75FF8D192F3039960091C943 /* CLSDK_Framework-Static.framework */,
+				75FF8D242F3039B30091C943 /* CLSDK_Framework-Dynamic.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		75FF8D032F3033B60091C943 /* Sources */ = {
+		75FF8D072F3037F50091C943 /* CLSDK_Framework */ = {
 			isa = PBXGroup;
 			children = (
+				75FF8D052F3037F50091C943 /* CLSDK_Framework.docc */,
+				75FF8D062F3037F50091C943 /* CLSDK_Framework.swift */,
+			);
+			path = CLSDK_Framework;
+			sourceTree = "<group>";
+		};
+		75FF8D082F3037F50091C943 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				75FF8D072F3037F50091C943 /* CLSDK_Framework */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -87,6 +108,20 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		75FF8CDD2F3032C30091C943 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D102F3039960091C943 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D1B2F3039B30091C943 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,9 +144,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				75FF8CE42F3032C30091C943 /* CLSDK_Framework */,
-			);
 			name = CLSDK_Framework;
 			packageProductDependencies = (
 			);
@@ -132,15 +164,52 @@
 			dependencies = (
 				75FF8CF02F3032C30091C943 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				75FF8CF12F3032C30091C943 /* CLSDK_FrameworkTests */,
-			);
 			name = CLSDK_FrameworkTests;
 			packageProductDependencies = (
 			);
 			productName = CLSDK_FrameworkTests;
 			productReference = 75FF8CED2F3032C30091C943 /* CLSDK_FrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		75FF8D0F2F3039960091C943 /* CLSDK_Framework-Static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75FF8D162F3039960091C943 /* Build configuration list for PBXNativeTarget "CLSDK_Framework-Static" */;
+			buildPhases = (
+				75FF8D102F3039960091C943 /* Headers */,
+				75FF8D112F3039960091C943 /* Sources */,
+				75FF8D142F3039960091C943 /* Frameworks */,
+				75FF8D152F3039960091C943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CLSDK_Framework-Static";
+			packageProductDependencies = (
+			);
+			productName = CLSDK_Framework;
+			productReference = 75FF8D192F3039960091C943 /* CLSDK_Framework-Static.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		75FF8D1A2F3039B30091C943 /* CLSDK_Framework-Dynamic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75FF8D212F3039B30091C943 /* Build configuration list for PBXNativeTarget "CLSDK_Framework-Dynamic" */;
+			buildPhases = (
+				75FF8D1B2F3039B30091C943 /* Headers */,
+				75FF8D1C2F3039B30091C943 /* Sources */,
+				75FF8D1F2F3039B30091C943 /* Frameworks */,
+				75FF8D202F3039B30091C943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CLSDK_Framework-Dynamic";
+			packageProductDependencies = (
+			);
+			productName = CLSDK_Framework;
+			productReference = 75FF8D242F3039B30091C943 /* CLSDK_Framework-Dynamic.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,6 +245,8 @@
 			targets = (
 				75FF8CE12F3032C30091C943 /* CLSDK_Framework */,
 				75FF8CEC2F3032C30091C943 /* CLSDK_FrameworkTests */,
+				75FF8D0F2F3039960091C943 /* CLSDK_Framework-Static */,
+				75FF8D1A2F3039B30091C943 /* CLSDK_Framework-Dynamic */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +266,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75FF8D152F3039960091C943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D202F3039B30091C943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,6 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FF8D0C2F3037F50091C943 /* CLSDK_Framework.swift in Sources */,
+				75FF8D0D2F3037F50091C943 /* CLSDK_Framework.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +296,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D112F3039960091C943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FF8D122F3039960091C943 /* CLSDK_Framework.swift in Sources */,
+				75FF8D132F3039960091C943 /* CLSDK_Framework.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75FF8D1C2F3039B30091C943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FF8D1D2F3039B30091C943 /* CLSDK_Framework.swift in Sources */,
+				75FF8D1E2F3039B30091C943 /* CLSDK_Framework.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +579,178 @@
 			};
 			name = Release;
 		};
+		75FF8D172F3039960091C943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SL6B57AC84;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corpsele.CLSDK-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75FF8D182F3039960091C943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SL6B57AC84;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corpsele.CLSDK-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		75FF8D222F3039B30091C943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SL6B57AC84;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corpsele.CLSDK-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75FF8D232F3039B30091C943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SL6B57AC84;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corpsele.CLSDK-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +777,24 @@
 			buildConfigurations = (
 				75FF8CFA2F3032C30091C943 /* Debug */,
 				75FF8CFB2F3032C30091C943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75FF8D162F3039960091C943 /* Build configuration list for PBXNativeTarget "CLSDK_Framework-Static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75FF8D172F3039960091C943 /* Debug */,
+				75FF8D182F3039960091C943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75FF8D212F3039B30091C943 /* Build configuration list for PBXNativeTarget "CLSDK_Framework-Dynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75FF8D222F3039B30091C943 /* Debug */,
+				75FF8D232F3039B30091C943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

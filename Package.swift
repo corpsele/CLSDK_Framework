@@ -11,8 +11,8 @@ let package = Package(
             name: "CLSDK_Framework",
             targets: ["CLSDK_Framework"]
         ),
-//        .library(name: "CLSDK_Swift-Static", type: .static, targets: ["CLSDK_Swift"]),
-//        .library(name: "CLSDK_Swift-Dynamic", type: .dynamic, targets: ["CLSDK_Swift"]),
+        .library(name: "CLSDK_Framework-Static", type: .static, targets: ["CLSDK_Framework"]),
+        .library(name: "CLSDK_Framework-Dynamic", type: .dynamic, targets: ["CLSDK_Framework"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
