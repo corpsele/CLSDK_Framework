@@ -5,6 +5,9 @@
 //  Created by corpsele_n on 2026/2/2.
 //  Adapter 
 
+import Foundation
+import Combine
+
 internal protocol PublicModel {
     var id: String {
         get
@@ -43,4 +46,12 @@ internal class PublicModelAdapter: PublicModel {
     var strUrl: String { legacyModel.strUrl }
     
     
+}
+
+@available(iOS 13.0, *)
+internal final class PublicObserverModel: ObservableObject {
+    @Published var counter: Int = 0
+    
+    func increment() { counter += 1 }
+    func decrement() { counter -= 1 }
 }

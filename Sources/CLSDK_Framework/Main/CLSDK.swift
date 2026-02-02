@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public class CLSDK {
     
@@ -17,13 +18,13 @@ public class CLSDK {
     
     public static func outputModel() {
         let model = PublicModelAdapter(legacyModel: LegacyModel(id: "1", strTitle: "Title", strUrl: "url", subTitle: "subTitle"))
-        print("model id = \(model.id), strTitle = \(model.title), strUrl = \(model.strUrl)")
+        print("==========model id = \(model.id), strTitle = \(model.title), strUrl = \(model.strUrl)")
     }
     
     public func outputViewRect() {
         let rectOne = PublicOneView()
         let rectTwo = PublicTwoView()
-        print("rectOne = \(rectOne.getViewFrame()), rectTwo = \(rectTwo.getViewFrame())")
+        print("==========rectOne = \(rectOne.getViewFrame()), rectTwo = \(rectTwo.getViewFrame())")
     }
     
     
@@ -38,6 +39,18 @@ extension CLSDK {
         broadcast.count = 55
         
     }
+    
+    
+    @available(iOS 13.0, *)
+    public func outputCombinObserver() {
+        var cancellabel = Set<AnyCancellable>()
+        let model = PublicObserverModel()
+        model.increment()
+        model.$counter.sink { newValue in
+            print("==========outputCombinObserver counter = \(newValue)")
+        }
+        .store(in: &cancellabel)
+    }
 }
 
 private class Station: PublicObserver {
@@ -48,7 +61,7 @@ private class Station: PublicObserver {
     
     func update(count: Double) {
         // print
-        print("broadcast station id = \(identifier) count = \(count)")
+        print("=========broadcast station id = \(identifier) count = \(count)")
     }
     
 }
