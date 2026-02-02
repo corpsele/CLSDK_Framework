@@ -5,7 +5,7 @@
 //  Created by corpsele_n on 2026/2/2.
 //  Adapter
 
-protocol PublicModel {
+internal protocol PublicModel {
     var id: String {
         get
         set
@@ -14,14 +14,14 @@ protocol PublicModel {
     var strUrl: String { get }
 }
 
-struct LegacyModel {
+internal struct LegacyModel {
     var id: String
     let strTitle: String
     let strUrl: String
     let subTitle: String
 }
 
-class PublicModelAdapter: PublicModel {
+internal class PublicModelAdapter: PublicModel {
     
     var legacyModel: LegacyModel
     
