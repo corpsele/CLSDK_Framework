@@ -132,7 +132,7 @@ public class SM4Cryptor {
     // MARK: - 字符串加密/解密
     
     /// 加密字符串，返回 Hex 格式
-    static func encryptToHex(plainText: String,
+    public static func encryptToHex(plainText: String,
                            key: String,
                            iv: String? = nil,
                            mode: Mode = .CBC,
@@ -146,7 +146,7 @@ public class SM4Cryptor {
     }
     
     /// 解密 Hex 格式的加密字符串
-    static func decryptFromHex(hexString: String,
+    public static func decryptFromHex(hexString: String,
                              key: String,
                              iv: String? = nil,
                              mode: Mode = .CBC,
@@ -163,7 +163,7 @@ public class SM4Cryptor {
     }
     
     /// 加密字符串，返回 Base64 格式
-    static func encryptToBase64(plainText: String,
+    public static func encryptToBase64(plainText: String,
                               key: String,
                               iv: String? = nil,
                               mode: Mode = .CBC,
@@ -177,7 +177,7 @@ public class SM4Cryptor {
     }
     
     /// 解密 Base64 格式的加密字符串
-    static func decryptFromBase64(base64String: String,
+    public static func decryptFromBase64(base64String: String,
                                 key: String,
                                 iv: String? = nil,
                                 mode: Mode = .CBC,
@@ -572,7 +572,7 @@ public class SM4Utils {
     
     // MARK: - 核心逻辑
     
-    private static func encrypt(data: Data, keyData: Data, ivHex: String?, mode: Mode, outputType: EncodingType) -> String? {
+    public static func encrypt(data: Data, keyData: Data, ivHex: String?, mode: Mode, outputType: EncodingType) -> String? {
         let engine = SM4Engine(key: keyData)
         let paddedData = padding(data: data)
         var cipherData = Data()
@@ -611,7 +611,7 @@ public class SM4Utils {
         }
     }
     
-    private static func decrypt(data: Data, keyData: Data, ivHex: String?, mode: Mode) -> Data? {
+    public static func decrypt(data: Data, keyData: Data, ivHex: String?, mode: Mode) -> Data? {
         guard data.count % 16 == 0 else {
             print("SM4 Error: Cipher data length must be a multiple of 16 bytes.")
             return nil
