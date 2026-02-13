@@ -4,7 +4,7 @@ public func getSM4() -> Sm4Impl {
 
 public class Sm4Impl: AnyObject {
   // S 盒
-  let STable: [UInt8] = [
+  public let STable: [UInt8] = [
     0xd6, 0x90, 0xe9, 0xfe, 0xcc, 0xe1, 0x3d, 0xb7, 0x16, 0xb6, 0x14, 0xc2, 0x28, 0xfb, 0x2c, 0x05,
     0x2b, 0x67, 0x9a, 0x76, 0x2a, 0xbe, 0x04, 0xc3, 0xaa, 0x44, 0x13, 0x26, 0x49, 0x86, 0x06, 0x99,
     0x9c, 0x42, 0x50, 0xf4, 0x91, 0xef, 0x98, 0x7a, 0x33, 0x54, 0x0b, 0x43, 0xed, 0xcf, 0xac, 0x62,
@@ -23,17 +23,17 @@ public class Sm4Impl: AnyObject {
     0x18, 0xf0, 0x7d, 0xec, 0x3a, 0xdc, 0x4d, 0x20, 0x79, 0xee, 0x5f, 0x3e, 0xd7, 0xcb, 0x39, 0x48,
   ]
 
-  let FK: [UInt32] = [0xa3b1_bac6, 0x56aa_3350, 0x677d_9197, 0xb270_22dc]
+  public let FK: [UInt32] = [0xa3b1_bac6, 0x56aa_3350, 0x677d_9197, 0xb270_22dc]
 
-  private func rotateLeft(_ x: UInt32, _ n: Int) -> UInt32 {
+  public func rotateLeft(_ x: UInt32, _ n: Int) -> UInt32 {
     return (x << n) | (x >> (32 - n))
   }
 
-  func Sbox(_ input: UInt8) -> UInt8 {
+  public func Sbox(_ input: UInt8) -> UInt8 {
     return STable[Int(input) & 0xFF]
   }
 
-  let CK: [UInt32] = [
+  public let CK: [UInt32] = [
     0x0007_0e15, 0x1c23_2a31, 0x383f_464d, 0x545b_6269,
     0x7077_7e85, 0x8c93_9aa1, 0xa8af_b6bd, 0xc4cb_d2d9,
     0xe0e7_eef5, 0xfc03_0a11, 0x181f_262d, 0x343b_4249,
@@ -44,8 +44,8 @@ public class Sm4Impl: AnyObject {
     0x1017_1e25, 0x2c33_3a41, 0x484f_565d, 0x646b_7279,
   ]
 
-  var rk: [UInt32] = Array(repeating: 0, count: 32)
-  var iv: [UInt8] = Array(repeating: 0, count: 16)
+  public var rk: [UInt32] = Array(repeating: 0, count: 32)
+  public var iv: [UInt8] = Array(repeating: 0, count: 16)
 
   public func setKey(key: String, iv: String, hex: Bool) -> Sm4Impl {
     if hex {
@@ -56,11 +56,11 @@ public class Sm4Impl: AnyObject {
     return self
   }
 
-  func setKeyBytes(keyBytes: [UInt8], ivBytes: [UInt8]) {
+  public func setKeyBytes(keyBytes: [UInt8], ivBytes: [UInt8]) {
     self.initKey(key: keyBytes, iv: ivBytes)
   }
 
-  func setKeyString(keyString: String, ivString: String) {
+  public func setKeyString(keyString: String, ivString: String) {
     var key = stringToBytes(text: keyString)
     if key.count != 16 {
       key = Array(repeating: 0, count: 16)
@@ -83,7 +83,7 @@ public class Sm4Impl: AnyObject {
     initKey(key: key, iv: iv)
   }
 
-  func initKey(key: [UInt8], iv: [UInt8]) {
+  public func initKey(key: [UInt8], iv: [UInt8]) {
     var MK: [UInt32] = Array(repeating: 0, count: 4)
     var offset = 0
     for i in 0..<(key.count / 4) {
@@ -113,7 +113,7 @@ public class Sm4Impl: AnyObject {
     return doCrypt(input: hex2Bytes(hex: text), cbcIV: Array(iv), encrypt: false)
   }
 
-  func doCrypt(input: [UInt8], cbcIV: [UInt8], encrypt: Bool) -> String {
+  public func doCrypt(input: [UInt8], cbcIV: [UInt8], encrypt: Bool) -> String {
     var input = input
     var cbcIV = cbcIV // Make mutable copy
     if encrypt {
@@ -178,11 +178,11 @@ public class Sm4Impl: AnyObject {
     }
   }
 
-  func F(x0: UInt32, x1: UInt32, x2: UInt32, x3: UInt32, rk: UInt32) -> UInt32 {
+  public func F(x0: UInt32, x1: UInt32, x2: UInt32, x3: UInt32, rk: UInt32) -> UInt32 {
     return x0 ^ T(a: x1 ^ x2 ^ x3 ^ rk)
   }
 
-  func T(a: UInt32) -> UInt32 {
+  public func T(a: UInt32) -> UInt32 {
     var abs = self.int2Bytes(n: a)
     for i in 0..<abs.count {
       abs[i] = Sbox(abs[i])
@@ -191,7 +191,7 @@ public class Sm4Impl: AnyObject {
     return b ^ rotateLeft(b, 2) ^ rotateLeft(b, 10) ^ rotateLeft(b, 18) ^ rotateLeft(b, 24)
   }
 
-  private func T_(_ a: UInt32) -> UInt32 {
+  public func T_(_ a: UInt32) -> UInt32 {
     var abs = self.int2Bytes(n: a)
     for i in 0..<abs.count {
       abs[i] = Sbox(abs[i])
@@ -200,7 +200,7 @@ public class Sm4Impl: AnyObject {
     return b ^ rotateLeft(b, 13) ^ rotateLeft(b, 23)
   }
 
-  func R(A: [UInt32]) -> [UInt32] {
+  public func R(A: [UInt32]) -> [UInt32] {
     var A = A
     A[0] = A[0] ^ A[3]
     A[3] = A[0] ^ A[3]
@@ -211,23 +211,23 @@ public class Sm4Impl: AnyObject {
     return A
   }
 
-  func fixInput(input: [UInt8]) -> [UInt8] {
+  public func fixInput(input: [UInt8]) -> [UInt8] {
     let t = 16 - input.count % 16
     let out = Array(repeating: UInt8(t), count: t)
     return input + out
   }
 
-  func bytesToUTF8String(bytes: [UInt8]) -> String {
+  public func bytesToUTF8String(bytes: [UInt8]) -> String {
     return String(decoding: bytes, as: UTF8.self)
   }
 
-  func stringToBytes(text: String) -> [UInt8] {
+  public func stringToBytes(text: String) -> [UInt8] {
     return Array(text.utf8)
   }
 
-  let HEX_ARRAY: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+  public let HEX_ARRAY: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
 
-  func bytes2Hex(bytes: [UInt8], upperCase: Bool) -> String {
+  public func bytes2Hex(bytes: [UInt8], upperCase: Bool) -> String {
     var hexChars: [String] = []
     for j in 0..<bytes.count {
       let v = bytes[j] & 0xFF
@@ -237,7 +237,7 @@ public class Sm4Impl: AnyObject {
     return hexChars.joined(separator: "").lowercased()
   }
 
-  func hex2Bytes(hex: String) -> [UInt8] {
+  public func hex2Bytes(hex: String) -> [UInt8] {
     var bytes = [UInt8]()
     let length = hex.count
     if length & 1 != 0 {
@@ -257,18 +257,18 @@ public class Sm4Impl: AnyObject {
     return bytes
   }
 
-  func bytes2Int(bytes: [UInt8]) -> UInt32 {
+  public func bytes2Int(bytes: [UInt8]) -> UInt32 {
     let n =
       (UInt32(bytes[0]) & 0xff) << 24 | (UInt32(bytes[1]) & 0xff) << 16 | (UInt32(bytes[2]) & 0xff)
       << 8 | UInt32(bytes[3]) & 0xff
     return n
   }
 
-  func limitToByte(i: Int) -> UInt8 {
+  public func limitToByte(i: Int) -> UInt8 {
     return UInt8(i & 0xFF)
   }
 
-  func int2Bytes(n: UInt32) -> [UInt8] {
+  public func int2Bytes(n: UInt32) -> [UInt8] {
     var b: [UInt8] = Array(repeating: 0, count: 4)
     b[0] = UInt8(0xFF & n >> 24)
     b[1] = UInt8(0xFF & n >> 16)
