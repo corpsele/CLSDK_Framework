@@ -12,7 +12,7 @@ import CommonCrypto
 public class SM4Cryptor {
     
     // MARK: - 错误定义
-    enum SM4Error: Error {
+    public enum SM4Error: Error {
         case invalidKeyLength
         case invalidIVLength
         case invalidInput
@@ -23,7 +23,7 @@ public class SM4Cryptor {
     }
     
     // MARK: - 工作模式
-    enum Mode {
+    public enum Mode {
         case ECB
         case CBC
         case CFB
@@ -40,7 +40,7 @@ public class SM4Cryptor {
     }
     
     // MARK: - 加密填充方式
-    enum Padding {
+    public enum Padding {
         case pkcs7
         case zero
         
@@ -66,7 +66,7 @@ public class SM4Cryptor {
     ///   - mode: 工作模式
     ///   - padding: 填充方式
     /// - Returns: 加密后的数据
-    static func encrypt(data: Data,
+    public static func encrypt(data: Data,
                        key: String,
                        iv: String? = nil,
                        mode: Mode = .CBC,
@@ -118,7 +118,7 @@ public class SM4Cryptor {
     }
     
     /// 解密数据
-    static func decrypt(data: Data,
+    public static func decrypt(data: Data,
                        key: String,
                        iv: String? = nil,
                        mode: Mode = .CBC,
