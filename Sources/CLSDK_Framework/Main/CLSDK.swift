@@ -41,7 +41,7 @@ extension CLSDK {
     }
     
     
-    @available(iOS 13.0, *)
+    @available(macOS 15.0, iOS 13.0, *)
     public func outputCombinObserver() {
         var cancellabel = Set<AnyCancellable>()
         let model = PublicObserverModel()
@@ -57,7 +57,7 @@ extension CLSDK {
         print("==========outputSimpleFac config = \(config.baseUrl), \(config.apiKey)")
     }
     
-    @available(iOS 13.0, *)
+    @available(macOS 15.0, iOS 13.0, *)
     public func outputMethodFac() {
         let v = ViewFac.makeLabel(text: "label fac")
         print("==========outputMethodFac v = \(v)")
